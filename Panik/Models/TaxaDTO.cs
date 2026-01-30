@@ -2,7 +2,7 @@
 {
     public class TaxaDTO
     {
-        public static readonly ParkingDTO Taxa1 = new ParkingDTO
+        public static readonly Parking Taxa1 = new Parking
         {
             WeekDaysTime = "00-24",
             WeekDaysPrice = 55,
@@ -11,7 +11,7 @@
             OtherTimePrice = 55,
         };
         
-        public static readonly ParkingDTO Taxa2 = new ParkingDTO 
+        public static readonly Parking Taxa2 = new Parking 
         { 
             WeekDaysTime = "07-21", 
             WeekDaysPrice = 31, 
@@ -19,7 +19,7 @@
             WeekendPrice = 31,
             OtherTimePrice = 20,
         };
-        public static readonly ParkingDTO Taxa3 = new ParkingDTO 
+        public static readonly Parking Taxa3 = new Parking 
         { 
             WeekDaysTime = "07-19", 
             WeekDaysPrice = 20, 
@@ -27,7 +27,7 @@
             WeekendPrice = 15,
             OtherTimePrice = 0,
         };
-        public static readonly ParkingDTO Taxa4 = new ParkingDTO 
+        public static readonly Parking Taxa4 = new Parking 
         { 
             WeekDaysTime = "07-19", 
             WeekDaysPrice = 10, 
@@ -35,7 +35,7 @@
             WeekendPrice = 10,
             OtherTimePrice = 0, 
         };
-        public static readonly ParkingDTO Taxa5 = new ParkingDTO 
+        public static readonly Parking Taxa5 = new Parking 
         { 
             WeekDaysTime = "07-19", 
             WeekDaysPrice = 5,
@@ -44,7 +44,7 @@
             OtherTimePrice = 0, 
         };
 
-        public static readonly List<ParkingDTO> AllTaxa = new List<ParkingDTO>
+        public static readonly List<Parking> AllTaxa = new List<Parking>
         {
             Taxa1,
             Taxa2,

@@ -2,10 +2,10 @@
 {
     public class ParkingDTO
     {
-        public string WeekDaysTime { get; set; }
-        public int? WeekDaysPrice { get; set; }
-        public string WeekendTime { get; set; }
-        public int? WeekendPrice { get; set; }
-        public int? OtherTimePrice { get; set; }
+        public bool CanPark { get; set; }
+        public bool PaidParking { get; set; }
+        public int? Price { get; set; }
+        public string TimeInterval { get; set; }
+        public string Address { get; set; }
     }
 }

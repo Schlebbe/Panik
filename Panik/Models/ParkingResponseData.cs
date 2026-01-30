@@ -20,5 +20,7 @@ namespace Panik.Models
         public string ParkingRate { get; set; }
         [JsonPropertyName("OTHER_INFO")]
         public string OtherInfo { get; set; }
+        [JsonPropertyName("ADDRESS")]
+        public string Address { get; set; }
     }
 }

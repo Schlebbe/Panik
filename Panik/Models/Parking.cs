@@ -1,0 +1,11 @@
+﻿namespace Panik.Models
+{
+    public class Parking
+    {
+        public string WeekDaysTime { get; set; }
+        public int? WeekDaysPrice { get; set; }
+        public string WeekendTime { get; set; }
+        public int? WeekendPrice { get; set; }
+        public int? OtherTimePrice { get; set; }
+    }
+}

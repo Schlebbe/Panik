@@ -29,14 +29,14 @@ namespace Panik.Endpoints
                 string weekendTime = matches[1].Value;
 
                 var weekDaysMatch = Regex.Match(parkingRate, @"(\d+)\s*kr\/tim\s+vardagar");
-                var ovrigMatch = Regex.Match(parkingRate, @"(\d+)\s*kr\/tim\s+övrig\s+tid");
+                var otherMatch = Regex.Match(parkingRate, @"(\d+)\s*kr\/tim\s+övrig\s+tid");
 
                 var weekDaysPrice = weekDaysMatch.Success
                     ? int.Parse(weekDaysMatch.Groups[1].Value)
                     : 0;
 
-                var otherTimePrice = ovrigMatch.Success
-                    ? int.Parse(ovrigMatch.Groups[1].Value)
+                var otherTimePrice = otherMatch.Success
+                    ? int.Parse(otherMatch.Groups[1].Value)
                     : 0;
 
                 var parkingDTO = new ParkingDTO

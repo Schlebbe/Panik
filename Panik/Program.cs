@@ -1,4 +1,5 @@
 
+using Panik.Endpoints;
 using Scalar.AspNetCore;
 
 namespace Panik
@@ -11,6 +12,8 @@ namespace Panik
 
             // Add services to the container.
             builder.Services.AddAuthorization();
+
+            ParkingEndpoints.APIKey = builder.Configuration["OpenParkingAPI"] ?? string.Empty;
 
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
@@ -28,11 +31,7 @@ namespace Panik
 
             app.UseAuthorization();
 
-            app.MapGet("/", (HttpContext httpContext) =>
-            {
-                
-                return null;
-            });
+            ParkingEndpoints.MapParkingEndpoints(app);
 
             app.Run();
         }

@@ -1,4 +1,5 @@
 
+using Microsoft.Extensions.Options;
 using Panik.Endpoints;
 using Scalar.AspNetCore;
 
@@ -12,6 +13,17 @@ namespace Panik
 
             // Add services to the container.
             builder.Services.AddAuthorization();
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("ReactDev", policy =>
+                {
+                    policy
+                        .WithOrigins("http://localhost:5173")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
 
             ParkingEndpoints.APIKey = builder.Configuration["OpenParkingAPI"] ?? string.Empty;
 
@@ -32,6 +44,8 @@ namespace Panik
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+
+            app.UseCors("ReactDev");
 
             ParkingEndpoints.MapParkingEndpoints(app);
 

@@ -30,14 +30,16 @@ namespace Panik.Endpoints
                 var parkingRate = data.Features[0].Properties.ParkingRate;
                 var matches = Regex.Matches(parkingRate, @"\b\d{1,2}-\d{1,2}\b");
 
-                if (matches.Count < 2)
+                if (matches.Count < 1)
                 {
                     return Results.BadRequest("Format is invalid.");
                 }
 
-                string weekDaysTime = matches[0].Value;
-                string weekendTime = matches[1].Value;
+                string weekDaysTime = matches.Count > 0 ? matches[0].Value : string.Empty;
+                string weekendTime = matches.Count > 1 ? matches[1].Value : string.Empty;
 
+
+                //TODO: Add case if "Alla dagar"
                 var weekDaysMatch = Regex.Match(parkingRate, @"(\d+)\s*kr\/tim\s+vardagar");
                 var otherMatch = Regex.Match(parkingRate, @"(\d+)\s*kr\/tim\s+övrig\s+tid");
 
@@ -53,7 +55,7 @@ namespace Panik.Endpoints
                 var currentTime = DateTime.Now;
                 var currentDay = currentTime.DayOfWeek;
                 bool paidParking;
-                bool canPark;
+                bool canPark = true;
 
                 // Check parking rules based on the day of the week
                 if (currentDay == DayOfWeek.Saturday)

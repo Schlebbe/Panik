@@ -98,8 +98,7 @@ namespace Panik.Endpoints
                     WeekDaysTime = weekDaysTime,
                     WeekDaysPrice = weekDaysPrice,
                     WeekendTime = weekendTime,
-                    OtherDayPrice = otherTimePrice,
-                    PaidParking = paidParking,
+                    OtherTimePrice = otherTimePrice,
                 };
 
 

@@ -6,5 +6,7 @@
         public int? WeekDaysPrice { get; set; }
         public string WeekendTime { get; set; }
         public int? OtherDayPrice { get; set; }
+        public bool CanPark { get; set; }
+        public bool PaidParking { get; set; }
     }
 }
